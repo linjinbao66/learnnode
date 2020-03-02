@@ -12,9 +12,11 @@ function main(argv){
 			copy(argv[0], argv[1]);
 		}
 	})
-	
 }
 
+/**
+ * 函数入口
+ */
 main(process.argv.slice(2));
 
 /**
