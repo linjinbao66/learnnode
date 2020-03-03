@@ -19,11 +19,25 @@
  }
 
  /**
-  * @description 函数调用
+  * 入口
   */
-heavyCompute(1000, function(count){
-    console.log(count);
-})
- 
+main();
 
-console.log('end')
+function main(){
+    console.log('begin')
+    heavyCompute(10000, function(count){
+        console.log(count);
+    })
+    console.log('end')
+    fun1();
+}
+
+function fun1(){
+    setTimeout(function(){
+        console.log(Date())
+    },1000);
+
+    setInterval(function(){
+        console.log(Date())
+    }, 1000);
+}
