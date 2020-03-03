@@ -2,6 +2,12 @@ var http = require('http')
 
 var server = http.createServer(function(request, response){
     response.writeHead(200,{'Content-Type':'text-plain'});
-    response.end('Hello World');
+    request.on('data', function(chunk){
+        response.write(chunk)
+    })
+    
+    request.on('end', function () {
+        response.end();
+    });
 });
 server.listen(8080);
