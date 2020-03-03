@@ -1,5 +1,6 @@
 var fs = require('fs') 
 var path = require('path')
+var readfile = require('./readfile')
 
 /**
  * 读取指定目录下所有文件
@@ -22,5 +23,9 @@ function main(){
     travel('D:/apidoc', function(pathname){
         console.log(pathname);
     });
+    var src = './readfile.js';
+    var dst = './readfile.js.bak';
+    readfile.copy(src,dst);
 };
-main()
+
+main();
